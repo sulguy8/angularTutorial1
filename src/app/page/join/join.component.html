@@ -1,0 +1,10 @@
+# 회원가입 페이지 <br>
+아이디 : <input type="text" [(ngModel)]="usi.usiId"/> <br>
+비밀번호 : <input type="password" [(ngModel)]="usi.usiPwd"/> <br>
+
+
+<!-- https://stackoverflow.com/questions/34574167/angular2-should-private-variables-be-accessible-in-the-template -->
+{{ test() }}
+<!-- {{ usi.usiPwd }} -->
+
+<button (click)="submit()">제출하기</button>

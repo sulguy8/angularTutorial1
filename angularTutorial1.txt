@@ -1,0 +1,61 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+1. 앵귤러 프로젝트 만들기
+	% npm install -g @angular/cli		// 앵귤러 설치
+	% ng new angularTutorial		// 프로젝트 생성
+	% ng serve --open			// 서버 실행
+
+2. 폴더 구조 잡기
+a. page, common 폴더 만들기
+b. page에 login, join, board 폴더 만들기		// "page 폴더" 
+c. page 하위 폴더에 모듈, 컴포넌트 만들기
+	% ng generate module ./page/"page 폴더" --routing
+	% ng generate component./page/"page 폴더" --routing
+
+3. 라우터 설정하기
+a. [app-routing.module.ts]에 "Route = []" 채우기
+b. ["page 폴더"-routing.module.ts]에 "Route = []" 채우기
+
+======================================================
+# 여기서 모듈, 컴포넌트, 라우팅에 대하여 설명
+* @NgModule
+a. declarations 	// 해당 모듈이 품고있는 "컴포넌트"들을 사용한다고 선언	// 앵귤러 조금 갖고 논 다음에 디렉티브, 파이프 공부해서 사용해 볼 것
+b. imports	// 라이브러리나 다른 "모듈"의 요소들을 사용할때 		
+c. exports		// 해당 "컴포넌트"를 다른 모듈에서 사용하는 것을 허락할 때
+d. provider	// 의존성 주입할때
+!! ngModel이나 ngIf 등등 온갖 디렉티브를 사용하기 위해 각 모듈에다 FormsModule를 import해줘야 함.
+
+* Routing
+1. <router-outlet></router-outlet>은 해당 라우팅모듈이 품고있는 라우트들을 보여줌
+======================================================
+
+4. 화면체크
+a. [app.component.html]에서 <router-outlet></router-outlet>만 남겨놓고 전부 지우기
+%  ng serve --open
+b. login works!가 브라우저에 잘 나타나는지 확인
+
+5. login관련 화면 및 로직 작성하기
+a. [login.component.html] 작성하기
+b. [login.component.ts] 작성하기
+
+6. 회원가입 버튼 눌렀을 때 가입페이지로 이동할 수 있도록 라우팅관련 서비스 만들기
+a. common에 service 폴더 만들기
+% ng generate service ./common/service/navigate
+b. [navigate.service.ts]에 "Router" import 하고 constructor에 추가하기
+c. goPage() 메소드 만들기
+d. 로그인 확면에서 회원가입 버튼 눌렀을 때 join work!가 브라우저에 잘 나타나는지 확인
+
+7. join관련 화면 및 로직 작성하기
+a. [join.component.html]에 회원가입 양식 작성하기
+b. [join.component.ts]에 DB역할을 대신할 StorageService 만들기
+% ng generate service ./common/service/storage
+c. vo폴더 만들고 [user-info.ts] 만들기
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+해야할 일!
+1. 로그인 페이지 구현(유효성 검사까지)
+2. 로그인 이후 board 페이지로 이동
+3. [board.component.html]에 게시글 추가 버튼 구현하기		
+4. board 하위 폴더 add에 게시글 추가 구현하기				// Create
+5. [board.component.html]에 게시글 리스트 및 삭제 구현하기	// Read(List로 받기), Delete
+6. board 하위 폴더 detail에 게시글 수정 구현하기			// Read(하나만 받기), Update
