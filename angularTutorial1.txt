@@ -39,7 +39,7 @@ b. [login.component.ts] 작성하기
 
 6. 회원가입 버튼 눌렀을 때 가입페이지로 이동할 수 있도록 라우팅관련 서비스 만들기
 a. common에 service 폴더 만들기
-% ng generate service ./common/service/navigate
+% ng generate service ./common/service/navigate/navigate
 b. [navigate.service.ts]에 "Router" import 하고 constructor에 추가하기
 c. goPage() 메소드 만들기
 d. 로그인 확면에서 회원가입 버튼 눌렀을 때 join work!가 브라우저에 잘 나타나는지 확인
@@ -47,7 +47,7 @@ d. 로그인 확면에서 회원가입 버튼 눌렀을 때 join work!가 브라
 7. join관련 화면 및 로직 작성하기
 a. [join.component.html]에 회원가입 양식 작성하기
 b. [join.component.ts]에 DB역할을 대신할 StorageService 만들기
-% ng generate service ./common/service/storage
+% ng generate service ./common/service/storage/storage
 c. vo폴더 만들고 [user-info.ts] 만들기
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////

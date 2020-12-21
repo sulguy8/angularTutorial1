@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigateService } from '../../common/service/navigate.service';
+import { NavigateService } from '../../../common/service/navigate/navigate.service';
 
 @Component({
   selector: 'app-login',

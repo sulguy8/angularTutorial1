@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NavigateService } from 'src/app/common/service/navigate.service';
-import { StorageService } from 'src/app/common/service/storage.service';
+import { NavigateService } from 'src/app/common/service/navigate/navigate.service';
+import { StorageService } from 'src/app/common/service/storage/storage.service';
 import { UserInfo } from 'src/app/common/vo/user-info';
 
 @Component({
